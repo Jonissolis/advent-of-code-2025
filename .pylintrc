@@ -1,0 +1,12 @@
+[MASTER]
+ignore=venv
+
+[MESSAGES CONTROL]
+# Disable docstring requirements for simple AoC day scripts and allow short scripts
+disable=
+    C0114,  # missing-module-docstring
+    C0115,  # missing-class-docstring
+    C0116   # missing-function-docstring
+
+[FORMAT]
+max-line-length=100
