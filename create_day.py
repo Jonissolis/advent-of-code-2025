@@ -17,6 +17,8 @@ MAIN_TEMPLATE = """\"\"\"Day solution template.
 
 This template always auto-detects the day from the current directory name
 (e.g. 'Day3'). It does not require editing the file to set the day.
+
+Run the file by 'python -m DayN.main' from the year folder.
 \"\"\"
 
 import os
