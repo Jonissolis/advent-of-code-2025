@@ -8,7 +8,6 @@ import os
 
 from aoc_base import AOCDay
 
-
 class Main(AOCDay):
     def __init__(self, use_test: bool = False):
         # Auto-detect the day from the current directory name (e.g. "Day1")
