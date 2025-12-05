@@ -5,7 +5,6 @@ This template always auto-detects the day from the current directory name
 """
 
 import os
-import numpy as np
 
 from aoc_base import AOCDay
 
@@ -41,13 +40,15 @@ class Main(AOCDay):
             if amount > 100:
                 zeroes += amount // 100
                 amount %= 100
-            prev_dial_num  = dial_num
-            dial_num += (amount if direction == 'R' else -amount)
-            if np.sign(prev_dial_num)*np.sign(dial_num) == -1 or \
-                np.sign(prev_dial_num-100)*np.sign(dial_num-100) == -1:
-                zeroes += 1
-            if dial_num == 0 or dial_num == 100:
-                zeroes += 1
+            if dial_num != 0 and dial_num != 100:
+                dial_num += (amount if direction == 'R' else -amount)
+                if dial_num < 0 or \
+                    dial_num-100 > 0:
+                    zeroes += 1
+                if dial_num == 0 or dial_num == 100:
+                    zeroes += 1
+            else:
+                dial_num += (amount if direction == 'R' else -amount)
             dial_num %= 100
 
         return zeroes
